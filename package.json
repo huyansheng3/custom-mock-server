@@ -1,0 +1,67 @@
+{
+  "_from": "custom-mock-server@0.0.10",
+  "_id": "custom-mock-server@0.0.10",
+  "_inBundle": false,
+  "_integrity": "sha1-O+8CKX2hoiX8gF3f90AinBmTS+U=",
+  "_location": "/custom-mock-server",
+  "_phantomChildren": {
+    "camelcase": "5.3.1",
+    "code-point-at": "1.1.0",
+    "decamelize": "1.2.0",
+    "find-up": "3.0.0",
+    "ms": "2.1.2",
+    "number-is-nan": "1.0.1",
+    "os-locale": "3.1.0",
+    "require-directory": "2.1.1",
+    "set-blocking": "2.0.0",
+    "which-module": "2.0.0",
+    "y18n": "4.0.0"
+  },
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "custom-mock-server@0.0.10",
+    "name": "custom-mock-server",
+    "escapedName": "custom-mock-server",
+    "rawSpec": "0.0.10",
+    "saveSpec": null,
+    "fetchSpec": "0.0.10"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "http://r.tnpm.oa.com/custom-mock-server/download/custom-mock-server-0.0.10.tgz",
+  "_shasum": "3bef02297da1a225fc805ddff740229c19934be5",
+  "_spec": "custom-mock-server@0.0.10",
+  "_where": "/Users/huyansheng/Documents/2020/agency-fe",
+  "author": {
+    "name": "hys"
+  },
+  "bin": {
+    "cmock": "bin/index.js"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chokidar": "^2.0.4",
+    "debug": "^4.1.0",
+    "fs-readdir-recursive": "^1.1.0",
+    "koa": "^2.6.1",
+    "koa-body": "^4.0.4",
+    "koa-router": "^7.4.0",
+    "koa-slow": "^2.1.0",
+    "mockjs": "^1.0.1-beta3",
+    "node-require-directory": "^1.0.2",
+    "superagent": "^4.0.0-beta.5",
+    "yargs": "^12.0.2"
+  },
+  "deprecated": false,
+  "description": "一个比较方便的node mock 服务，内置 mockjs/cookie/proxy 等功能",
+  "devDependencies": {},
+  "license": "ISC",
+  "name": "custom-mock-server",
+  "scripts": {
+    "cmock": "node ./bin/index.js"
+  },
+  "version": "0.0.10"
+}

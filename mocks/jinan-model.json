@@ -1,0 +1,653 @@
+{
+  "errno": 0,
+  "errmsg": "22",
+  "data": [
+    {
+      "path": "/api/ods/list",
+      "method": "POST",
+      "title": "基础查询接口",
+      "description": "按照条件获取指定资源中的数据",
+      "request": {
+        "header": {
+          "Content-Type": "application/json"
+        },
+        "body": [
+          {
+            "key": "resource",
+            "value": "6he1.driverlicence.info",
+            "type": "string",
+            "required": true,
+            "other_values": [
+              "350m.device.gps",
+              "nitou.nitou.gps",
+              "haiyi.person.info",
+              "policemotor.motor.info",
+              "policemotor.motororg.info",
+              "policecar.car.info",
+              "nitou.nitou.info",
+              "6he1.driverlicence.info",
+              "6he1.veh.info",
+              "haiyi.department.info"
+            ],
+            "description": "指定资源名称"
+          },
+          {
+            "key": "where",
+            "value": {
+              "SFZMHM": 370687198510310041
+            },
+            "type": "json",
+            "required": true,
+            "description": "查询条件"
+          },
+          {
+            "key": "from",
+            "value": 0,
+            "type": "int",
+            "required": false,
+            "description": "取出数据的起始行, 不传时默认为0"
+          },
+          {
+            "key": "length",
+            "value": 1000,
+            "type": "int",
+            "required": false,
+            "description": "取出数据的行数，不传时默认为 1000"
+          }
+        ]
+      },
+      "response": [
+        {
+          "key": "status",
+          "value": 1,
+          "type": "int",
+          "description": "状态码 1:无问题， 其他值:有问题"
+        },
+        {
+          "key": "message",
+          "value": "success!",
+          "type": "string",
+          "description": "请求处理结果提示信息"
+        },
+        {
+          "key": "time",
+          "value": "success",
+          "type": "int",
+          "description": "处理时间(时间戳)"
+        },
+        {
+          "key": "total",
+          "value": 1071,
+          "type": "int",
+          "description": "总的数据量"
+        },
+        {
+          "key": "data",
+          "value": [
+            {
+              "BGDH": null,
+              "BMDM": "370190002400",
+              "BMMC": "高速平阴大队",
+              "BZ": "人员编号:AA8003",
+              "BZLX": "其他",
+              "DJJ": "已配发",
+              "JB": "未定级",
+              "LCZT": "已审核",
+              "LGYY": null,
+              "MZ": "汉族",
+              "RDSJ": "2014-04-01 00:00:00",
+              "RYBH": "A1025",
+              "RYLB": "勤务辅警",
+              "SFZG": "在岗",
+              "SFZMHM": "51132219921130807X",
+              "SGZG": "无等级",
+              "SJHM": "18853146161",
+              "XB": "男",
+              "XL": "中等专科毕业",
+              "XM": "廖海兵",
+              "YWGW": "公路执勤",
+              "ZFY": "已配发",
+              "ZFYBH": "7792075",
+              "ZFZG": "无等级",
+              "ZY": "电气技术应用",
+              "ZZMM": "中共党员",
+              "device_id": "514049"
+            }
+          ],
+          "type": "json",
+          "description": "数据库中的多条记录信息"
+        }
+      ]
+    },
+    {
+      "path": "/api/model/police/list",
+      "method": "POST",
+      "title": "警员模型接口",
+      "description": "获取指定时间段内有 GPS 记录的警员信息以及 GPS 信息",
+      "request": {
+        "header": {
+          "Content-Type": "application/json"
+        },
+        "body": [
+          {
+            "key": "resource",
+            "value": "model.police.gps",
+            "type": "string",
+            "required": true,
+            "other_values": [],
+            "description": "指定的警员模型资源名称"
+          },
+          {
+            "key": "where",
+            "value": {
+              "time": {
+                "start": 1540519240,
+                "end": 1540519540
+              }
+            },
+            "type": "json",
+            "required": true,
+            "description": "查询条件 start 表示有 gps 记录的开始时间，end 为结束时间，均为时间戳"
+          }
+        ]
+      },
+      "response": [
+        {
+          "key": "status",
+          "value": 1,
+          "type": "int",
+          "description": "状态码 1:无问题， 其他值:有问题"
+        },
+        {
+          "key": "message",
+          "value": "success!",
+          "type": "string",
+          "description": "请求处理结果提示信息"
+        },
+        {
+          "key": "time",
+          "value": "success",
+          "type": "int",
+          "description": "处理时间(时间戳)"
+        },
+        {
+          "key": "total",
+          "value": 1071,
+          "type": "int",
+          "description": "总的数据量"
+        },
+        {
+          "key": "data",
+          "value": [
+            {
+              "BGDH": null,
+              "BMDM": "370190002400",
+              "BMMC": "高速平阴大队",
+              "BZ": "人员编号:AA8003",
+              "BZLX": "其他",
+              "DJJ": "已配发",
+              "JB": "未定级",
+              "LCZT": "已审核",
+              "LGYY": null,
+              "MZ": "汉族",
+              "RDSJ": "2014-04-01 00:00:00",
+              "RYBH": "A1025",
+              "RYLB": "勤务辅警",
+              "SFZG": "在岗",
+              "SFZMHM": "51132219921130807X",
+              "SGZG": "无等级",
+              "SJHM": "18853146161",
+              "XB": "男",
+              "XL": "中等专科毕业",
+              "XM": "廖海兵",
+              "YWGW": "公路执勤",
+              "ZFY": "已配发",
+              "ZFYBH": "7792075",
+              "ZFZG": "无等级",
+              "ZY": "电气技术应用",
+              "ZZMM": "中共党员",
+              "device_id": "514049",
+              "lat": 36.481155,
+              "lng": 116.722786,
+              "time": "2018-10-12 14:20:08"
+            }
+          ],
+          "type": "json",
+          "description": "数据库中的多条记录信息"
+        }
+      ]
+    },
+    {
+      "path": "/api/model/pmotor/list",
+      "method": "POST",
+      "title": "二轮（警摩）模型接口",
+      "description": "获取指定时间段内有 GPS 记录的二轮信息以及 GPS 信息",
+      "request": {
+        "header": {
+          "Content-Type": "application/json"
+        },
+        "body": [
+          {
+            "key": "resource",
+            "value": "model.motor.gps",
+            "type": "string",
+            "required": true,
+            "other_values": [],
+            "description": "指定的二轮模型资源名称"
+          },
+          {
+            "key": "where",
+            "value": {
+              "time": {
+                "start": 1540957256,
+                "end": 1540957556
+              }
+            },
+            "type": "json",
+            "required": true,
+            "description": "查询条件 start 表示有 gps 记录的开始时间，end 为结束时间，均为时间戳"
+          }
+        ]
+      },
+      "response": [
+        {
+          "key": "status",
+          "value": 1,
+          "type": "int",
+          "description": "状态码 1:无问题， 其他值:有问题"
+        },
+        {
+          "key": "message",
+          "value": "success!",
+          "type": "string",
+          "description": "请求处理结果提示信息"
+        },
+        {
+          "key": "time",
+          "value": "success",
+          "type": "int",
+          "description": "处理时间(时间戳)"
+        },
+        {
+          "key": "total",
+          "value": 1071,
+          "type": "int",
+          "description": "总的数据量"
+        },
+        {
+          "key": "data",
+          "value": [
+            {
+              "brand_code": "0",
+              "driver": "卜德星",
+              "icon_type": "7",
+              "lat": 36.6614970854,
+              "license": "鲁A9913警摩",
+              "lng": 117.049131265,
+              "org_id": "1160",
+              "org_name": "18553128412",
+              "protocol": "JT808",
+              "sim_no": "历下区大队",
+              "terminal_type": "1",
+              "tid": "13624",
+              "time": "2018-10-12 18:33:23.0",
+              "useage": "17",
+              "veh_id": "13823",
+              "veh_type": "1"
+            }
+          ],
+          "type": "json",
+          "description": "数据库中的多条记录信息"
+        }
+      ]
+    },
+    {
+      "path": "/api/model/police_car/list",
+      "method": "POST",
+      "title": "四轮（警车）模型接口",
+      "description": "获取指定时间段内有 GPS 记录的四轮信息以及 GPS 信息",
+      "request": {
+        "header": {
+          "Content-Type": "application/json"
+        },
+        "body": [
+          {
+            "key": "resource",
+            "value": "model.police_car.gps",
+            "type": "string",
+            "required": true,
+            "other_values": [],
+            "description": "指定的四轮模型资源名称"
+          },
+          {
+            "key": "where",
+            "value": {
+              "time": {
+                "start": 1540957256,
+                "end": 1540957556
+              }
+            },
+            "type": "json",
+            "required": true,
+            "description": "查询条件 start 表示有 gps 记录的开始时间，end 为结束时间，均为时间戳"
+          }
+        ]
+      },
+      "response": [
+        {
+          "key": "status",
+          "value": 1,
+          "type": "int",
+          "description": "状态码 1:无问题， 其他值:有问题"
+        },
+        {
+          "key": "message",
+          "value": "success!",
+          "type": "string",
+          "description": "请求处理结果提示信息"
+        },
+        {
+          "key": "time",
+          "value": "success",
+          "type": "int",
+          "description": "处理时间(时间戳)"
+        },
+        {
+          "key": "total",
+          "value": 1071,
+          "type": "int",
+          "description": "总的数据量"
+        },
+        {
+          "key": "data",
+          "value": [
+            {
+              "Callid": 0,
+              "CityID": 2,
+              "Color": "蓝白",
+              "CtrlFlag": 0,
+              "Mark": "鲁A9590警",
+              "SIM": "1000122191",
+              "Style": "全顺",
+              "TeamID": 3,
+              "Totalkilometres": null,
+              "VType": 3,
+              "VehicleID": 1191,
+              "driver": "",
+              "gpsid": 138407,
+              "imei": "358799041165536 ",
+              "lat": 42.182694,
+              "lng": 132.008641,
+              "office1": "济南公安交警支队",
+              "office2": "历城大队",
+              "office3": "潘庄中队",
+              "officer": "",
+              "overspeed": 120,
+              "overspeedtime": 10,
+              "phone": "14705413906",
+              "regDate": "2015-01-13 16:04:46",
+              "remark": "2015-3-24",
+              "simsn": "898600D0151040054916",
+              "time": "2018-10-12 16:03:22.0",
+              "updatedate": "2018-07-31 09:12:36",
+              "workValue": 10,
+              "workmode": 2
+            }
+          ],
+          "type": "json",
+          "description": "数据库中的多条记录信息"
+        }
+      ]
+    },
+    {
+      "path": "/api/model/nitou/list",
+      "method": "POST",
+      "title": "渣土车模型接口",
+      "description": "获取指定时间段内有 GPS 记录的渣土车信息以及 GPS 信息",
+      "request": {
+        "header": {
+          "Content-Type": "application/json"
+        },
+        "body": [
+          {
+            "key": "resource",
+            "value": "model.nitou_car.gps",
+            "type": "string",
+            "required": true,
+            "other_values": [],
+            "description": "指定的渣土车模型资源名称"
+          },
+          {
+            "key": "where",
+            "value": {
+              "id": "鲁AL9587",
+              "time": {
+                "start": 1540957256,
+                "end": 1540957556
+              }
+            },
+            "type": "json",
+            "required": true,
+            "description": "查询条件 start 表示有 gps 记录的开始时间，end 为结束时间，均为时间戳, id 代表车牌号（可以不传）"
+          }
+        ]
+      },
+      "response": [
+        {
+          "key": "status",
+          "value": 1,
+          "type": "int",
+          "description": "状态码 1:无问题， 其他值:有问题"
+        },
+        {
+          "key": "message",
+          "value": "success!",
+          "type": "string",
+          "description": "请求处理结果提示信息"
+        },
+        {
+          "key": "time",
+          "value": "success",
+          "type": "int",
+          "description": "处理时间(时间戳)"
+        },
+        {
+          "key": "total",
+          "value": 1071,
+          "type": "int",
+          "description": "总的数据量"
+        },
+        {
+          "key": "data",
+          "value": [
+            {
+              "admit_number": "6922",
+              "airtigh_type": "平推",
+              "brand_num": "",
+              "car_driving_license": "",
+              "car_factory": "1",
+              "car_note": "",
+              "car_number": "鲁AL9587",
+              "car_owners_contact": "15253103555",
+              "car_owners_name": "业丰",
+              "car_register": 1,
+              "car_type": "新车",
+              "certificate": "3714260020014008049",
+              "color": "蓝色",
+              "driver_name": "杨俊盈",
+              "drivertel": "18888206322",
+              "driving_license_number": "371426199104102417",
+              "engine_number": "LZZ1ELSD2HN201971",
+              "enterprise_name": "济南业丰机械化施工有限公司",
+              "equipment_providers": "2",
+              "id": 2744633,
+              "identification": "170217018437",
+              "lat": 36.77578,
+              "lng": 117.15189,
+              "quality": "12740kg",
+              "register": "2017-04-01 08:00:00",
+              "sim_number": "64848026853",
+              "time": "2018-10-12 16:25:49.0"
+            }
+          ],
+          "type": "json",
+          "description": "数据库中的多条或一条记录信息"
+        }
+      ]
+    },
+    {
+      "path": "/api/model/photo/list",
+      "method": "POST",
+      "title": "获取照片列表",
+      "description": "获取驾驶人员照片列表",
+      "request": {
+        "header": {
+          "Content-Type": "application/json",
+          "authCode": "8e2f30faa88043179ed0b986b9ca5cc",
+          "serviceName": "haiyi.photo.info"
+        },
+        "body": [
+          {
+            "key": "resource",
+            "value": "haiyi.photo.info",
+            "type": "string",
+            "required": true,
+            "other_values": [],
+            "description": "指定的照片资源名称"
+          },
+          {
+            "key": "where",
+            "value": {},
+            "type": "json",
+            "required": true,
+            "description": "查询条件 可指定通过身份证号码查询"
+          }
+        ]
+      },
+      "response": [
+        {
+          "key": "status",
+          "value": 1,
+          "type": "int",
+          "description": "状态码 1:无问题， 其他值:有问题"
+        },
+        {
+          "key": "message",
+          "value": "success!",
+          "type": "string",
+          "description": "请求处理结果提示信息"
+        },
+        {
+          "key": "time",
+          "value": "success",
+          "type": "int",
+          "description": "处理时间(时间戳)"
+        },
+        {
+          "key": "total",
+          "value": 1071,
+          "type": "int",
+          "description": "总的数据量"
+        },
+        {
+          "key": "data",
+          "value": [
+            {
+              "GXSJ": "2010-08-16 15:14:16",
+              "SFZMHM": "371427198204172828",
+              "ZP": "http://172.54.1.251:16200/api/model/photo/MzcxNDI3MTk4MjA0MTcyODI4"
+            }
+          ],
+          "type": "json",
+          "description": "数据库中的多条或一条记录信息"
+        }
+      ]
+    },
+    {
+      "path": "/api/model/photo/<id_str>",
+      "method": "GET",
+      "title": "驾驶员照片模型接口",
+      "description": "获取指定驾驶人员的照片",
+      "request": {
+        "header": {
+          "Content-Type": "application/json",
+          "serviceName": "haiyi.photo.info",
+          "authCode": "8e2f30faa88043179ed0b986b9ca5cc"
+        }
+      },
+      "response": [
+        {
+          "key": "mimetype",
+          "value": "",
+          "type": "image/jpeg",
+          "description": "资源媒体类型"
+        }
+      ]
+    },
+    {
+      "path": "/api/model/jurisdiction/point",
+      "method": "POST",
+      "title": "获取辖区名称",
+      "description": "获取指定点的辖区名称",
+      "request": {
+        "header": {
+          "Content-Type": "application/json"
+        },
+        "body": [
+          {
+            "key": "resource",
+            "value": "jurisdiction.area.info",
+            "type": "string",
+            "required": true,
+            "other_values": [],
+            "description": "指定的辖区边界资源名称"
+          },
+          {
+            "key": "point",
+            "value": [
+              117.068848,
+              36.645154
+            ],
+            "type": "list",
+            "required": true,
+            "description": "查询条件 查询点的gps坐标"
+          }
+        ]
+      },
+      "response": [
+        {
+          "key": "status",
+          "value": 1,
+          "type": "int",
+          "description": "状态码 1:无问题， 其他值:有问题"
+        },
+        {
+          "key": "message",
+          "value": "success!",
+          "type": "string",
+          "description": "请求处理结果提示信息"
+        },
+        {
+          "key": "time",
+          "value": "success",
+          "type": "int",
+          "description": "处理时间(时间戳)"
+        },
+        {
+          "key": "total",
+          "value": 1,
+          "type": "int",
+          "description": "总的数据量"
+        },
+        {
+          "key": "data",
+          "value": {
+            "area_name": "历下大队四中队"
+          },
+          "type": "json",
+          "description": "数据库中的一条记录信息"
+        }
+      ]
+    }
+  ]
+}
