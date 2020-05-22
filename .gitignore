@@ -1,0 +1,32 @@
+# IDE
+.idea/
+*.iml
+
+# NPM & Yarn
+node_modules/
+yarn.lock
+yarn-error.log
+
+# Sbt
+.g8/
+project/project
+project/target
+target
+
+# Frontend
+*-fe/build
+!mobile-fe/build/
+
+# Log
+log/
+
+# Docs
+~*.doc
+~*.docx
+~*.xls
+~*.xlsx
+
+# Evolutions
+*/conf/evolutions/
+
+
