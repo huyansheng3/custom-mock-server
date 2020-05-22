@@ -18,7 +18,9 @@ const koaSlow = require('koa-slow');
 const axios = require('axios');
 const superagent = require('superagent');
 const qs = require('qs');
-const loadDir = require('node-require-directory');
+const requireDirectory = require('require-directory');
+
+
 require('./mock-extend');
 const chokidar = require('chokidar');
 const Mock = require('mockjs');
@@ -197,14 +199,18 @@ methods.forEach(method => {
         useMock
       } = urlMap;
 
-      const originMocks = loadDir(mockDir);
+      const originMocks = requireDirectory(module, mockDir);
+
+      console.log(originMocks)
+
       let projectMocks = {}
 
       if (projectMockDir) {
-        projectMocks = loadDir(projectMockDir);
+        projectMocks = requireDirectory(module, projectMockDir);
       }
 
-      const mocks = { ...originMocks,
+      const mocks = {
+        ...originMocks,
         ...projectMocks
       }
 
@@ -289,7 +295,7 @@ module.exports = function startServer(options) {
     port,
     delay
   } = options;
-  console.log(root);
+  console.log("root: ", root);
   // Load (require) require-s passed in as options
   options.require.forEach(require);
   const paths = recursiveReaddirSync(root, path => Boolean(path)).map(handlerPath => join(resolve(root), handlerPath))
@@ -317,7 +323,6 @@ module.exports = function startServer(options) {
     });
   }
 
-  console.log(urlMap.delay || delay || 0);
   app.use(koaSlow({
     delay: urlMap.delay || delay || 0
   }));
