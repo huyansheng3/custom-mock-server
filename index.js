@@ -201,8 +201,6 @@ methods.forEach(method => {
 
       const originMocks = requireDirectory(module, mockDir);
 
-      console.log(originMocks)
-
       let projectMocks = {}
 
       if (projectMockDir) {
